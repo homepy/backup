@@ -1,4 +1,5 @@
-" An example for a vimrc file.
+"""""""""""""""""""vimrc sample"""""""""""""""""""""""""""""
+"An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2011 Apr 15
@@ -66,8 +67,8 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " For all text files set 'textwidth' to 79 characters.
+  autocmd FileType text setlocal textwidth=79
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -95,7 +96,7 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 关闭文件备份
 set nobackup
@@ -134,7 +135,7 @@ colorscheme desert
                     " line will be broken after white space to get this width.
 
 
-set guifont= \ 14 
+set guifont=Inconsolata\ 13
 
 
 if has("autocmd")
@@ -174,25 +175,21 @@ let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
+let NERDTreeWinSize=22
 
 " tagbar
- let g:tagbar_ctags_bin = '/usr/bin/ctags'	" specify the location of your ctags executable
- let g:tagbar_width = 30			" Width of the Tagbar window
- let g:tagbar_foldlevel = 3 			" Folds with a level
+let g:tagbar_ctags_bin = '/usr/bin/ctags'	" specify the location of your ctags executable
+let g:tagbar_width = 30			" Width of the Tagbar window
+let g:tagbar_foldlevel = 3 			" Folds with a level
 						" higher than this number will be closed.
- autocmd FileType python,c,cpp nested :TagbarOpen 	" open Tagbar only for specific filetypes
+autocmd FileType python,c,cpp nested :TagbarOpen 	" open Tagbar only for specific filetypes
         
-        
- " let g:tagbar_left = 1 			" to open it on the left instead.
- " autocmd VimEnter * nested :TagbarOpen 	" open Tagbar automatically on Vim startup no matter what
+" let g:tagbar_left = 1 			" to open it on the left instead.
+" autocmd VimEnter * nested :TagbarOpen 	" open Tagbar automatically on Vim startup no matter what
 
 
-" hot key 快捷键
+" hot key 快捷键 
 " <F7> flake8
 nmap <F8> :NERDTree<CR>
 nmap <F9> :TagbarToggle<CR>
-
-
-
 
