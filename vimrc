@@ -10,6 +10,49 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+
+""""""""""""""""""""""""""vundle""""""""""""""""""""""""""""
+ set nocompatible               " be iMproved
+ filetype off                   " required!
+
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+ " let Vundle manage Vundle
+ " required! 
+ Bundle 'gmarik/vundle'
+
+ " original repos on github
+ " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+ " Bundle 'tpope/vim-rails.git'
+
+ Bundle 'scrooloose/nerdtree'
+ Bundle 'vim-scripts/Pydiction.git'
+ Bundle 'vim-scripts/molokai.git'
+ Bundle 'altercation/vim-colors-solarized'
+ Bundle 'vim-scripts/desertEx.git' 
+ 
+ " vim-scripts repos
+ Bundle 'vim-flake8'
+ Bundle 'Tagbar'
+
+ " non github repos
+ " Bundle 'git://git.wincent.com/command-t.git'
+ " ...
+
+ filetype plugin indent on     " required!
+ "
+ " Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+""""""""""""""""""""""""""""""vundle end""""""""""""""""""
+
+
+
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -163,7 +206,7 @@ endif
 let python_highlight_all = 1 
 
 " filetype plugin on
-let g:pydiction_location = '/usr/share/pydiction/complete-dict'
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 " taglist
 " let Tlist_Ctags_Cmd='/usr/bin/ctags' 		" 指定Exuberant ctags程序的位置
